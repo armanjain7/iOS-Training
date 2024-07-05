@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Update_Details" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwU-nw-Hd3">
+                                <rect key="frame" x="96" y="75" width="201" height="28"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zenitsu-elxcv6kxzxsrpp69-2" translatesAutoresizingMaskIntoConstraints="NO" id="WWu-8D-GZu">
+                                <rect key="frame" x="96" y="169" width="201" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="B6a-nP-yHN"/>
+                                    <constraint firstAttribute="height" constant="200" id="E4k-qX-Rn2"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="eTW-Gx-2zj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Phone Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27F-zm-Ufh">
+                                <rect key="frame" x="16" y="471" width="156.66666666666663" height="26"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7999890631" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJy-4k-fzD">
+                                <rect key="frame" x="180.66666666666666" y="470" width="116.33333333333334" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="9fn-Vw-2ra"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Db-Tc-ehf">
+                                <rect key="frame" x="16" y="543" width="67" height="26"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jainarman1234@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLB-Tp-DCF">
+                                <rect key="frame" x="91" y="542" width="257" height="26"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHa-zP-iWP">
+                                <rect key="frame" x="113" y="735" width="184" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Update Details">
+                                    <fontDescription key="titleFontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="23"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="tzd-VR-CCE" kind="presentation" modalTransitionStyle="flipHorizontal" id="BMS-eM-zyW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OLB-Tp-DCF" secondAttribute="trailing" constant="45" id="2dX-M0-ak9"/>
+                            <constraint firstItem="OLB-Tp-DCF" firstAttribute="top" secondItem="27F-zm-Ufh" secondAttribute="bottom" constant="45" id="5AT-Eq-vbl"/>
+                            <constraint firstItem="aHa-zP-iWP" firstAttribute="trailing" secondItem="WWu-8D-GZu" secondAttribute="trailing" id="5jW-4d-MWw"/>
+                            <constraint firstItem="WWu-8D-GZu" firstAttribute="top" secondItem="bwU-nw-Hd3" secondAttribute="bottom" constant="66" id="6Si-zU-2Ss"/>
+                            <constraint firstItem="aHa-zP-iWP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="Dr7-Fc-8TZ"/>
+                            <constraint firstItem="5Db-Tc-ehf" firstAttribute="top" secondItem="27F-zm-Ufh" secondAttribute="bottom" constant="46" id="IGR-Bu-toV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5Db-Tc-ehf" secondAttribute="bottom" constant="249" id="Nbo-V5-BMS"/>
+                            <constraint firstItem="OLB-Tp-DCF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Db-Tc-ehf" secondAttribute="trailing" symbolic="YES" id="P5Q-tD-Ich"/>
+                            <constraint firstItem="WWu-8D-GZu" firstAttribute="trailing" secondItem="ZJy-4k-fzD" secondAttribute="trailing" id="VfJ-CB-qxT"/>
+                            <constraint firstItem="bwU-nw-Hd3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="a63-t5-91W"/>
+                            <constraint firstItem="bwU-nw-Hd3" firstAttribute="centerX" secondItem="WWu-8D-GZu" secondAttribute="centerX" id="bxR-ZJ-j4F"/>
+                            <constraint firstItem="OLB-Tp-DCF" firstAttribute="top" secondItem="ZJy-4k-fzD" secondAttribute="bottom" constant="46" id="cT5-La-L3w"/>
+                            <constraint firstItem="27F-zm-Ufh" firstAttribute="leading" secondItem="5Db-Tc-ehf" secondAttribute="leading" id="dyF-X9-XRw"/>
+                            <constraint firstItem="WWu-8D-GZu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fok-EC-ih4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aHa-zP-iWP" secondAttribute="bottom" constant="43" id="hjt-e4-uzH"/>
+                            <constraint firstItem="ZJy-4k-fzD" firstAttribute="trailing" secondItem="bwU-nw-Hd3" secondAttribute="trailing" id="r2O-V0-EMl"/>
+                            <constraint firstItem="ZJy-4k-fzD" firstAttribute="leading" secondItem="27F-zm-Ufh" secondAttribute="trailing" constant="8" id="t0R-xT-lHD"/>
+                            <constraint firstItem="WWu-8D-GZu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="96" id="wkL-hB-YL7"/>
+                            <constraint firstItem="aHa-zP-iWP" firstAttribute="trailing" secondItem="bwU-nw-Hd3" secondAttribute="trailing" id="xTf-qg-i2c"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageViewer" destination="WWu-8D-GZu" id="DMU-yW-kDQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21" y="4"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nta-5e-Bei">
+            <objects>
+                <viewController id="tzd-VR-CCE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UC5-Qs-4ZX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUb-Sg-gGz">
+                                <rect key="frame" x="109" y="72" width="175" height="28"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7uh-gf-PgP">
+                                <rect key="frame" x="96" y="226" width="200" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oa1-1j-ysT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kUb-Sg-gGz" firstAttribute="top" secondItem="oa1-1j-ysT" secondAttribute="top" constant="72" id="KO1-mH-PvL"/>
+                            <constraint firstItem="kUb-Sg-gGz" firstAttribute="leading" secondItem="oa1-1j-ysT" secondAttribute="leading" constant="109" id="M0u-gh-AWE"/>
+                            <constraint firstItem="kUb-Sg-gGz" firstAttribute="centerX" secondItem="UC5-Qs-4ZX" secondAttribute="centerX" id="XOw-e9-ykJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfp-7S-k1w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762.59541984732823" y="15.492957746478874"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="zenitsu-elxcv6kxzxsrpp69-2" width="3840" height="2400"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
