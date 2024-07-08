@@ -29,12 +29,7 @@ class ViewController: UIViewController{
         imageViewer.layer.cornerRadius = radius
         imageViewer.clipsToBounds = true
     }
-    
-    /*@IBAction func updateContactTapped(_ sender: UIButton) {
-        let updateVC = UpdateController(nibName: "UpdateController", bundle: nil)
-        updateVC.delegate = self
-        present(updateVC, animated: true, completion: nil)
-    }*/
+
 }
 extension ViewController: ContactDetailsProtocol {
     func didUpdateContactDetails(phoneNumber: String, email: String) {
