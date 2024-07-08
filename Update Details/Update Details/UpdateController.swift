@@ -6,14 +6,28 @@
 //
 
 import UIKit
-
+protocol ContactDetailsProtocol: AnyObject {
+    func didUpdateContactDetails(phoneNumber: String, email: String)
+}
 class UpdateController: UIViewController {
-
+    
+    
+    @IBOutlet weak var phoneNumberTextField: UITextField!
+        @IBOutlet weak var emailTextField: UITextField!
+        @IBOutlet weak var saveButton: UIButton!
+        weak var delegate: ContactDetailsProtocol?
+    @IBAction func saveButton(_ sender: UIButton) {
+        let phoneNumber = phoneNumberTextField.text ?? ""
+        let email = emailTextField.text ?? ""
+        delegate?.didUpdateContactDetails(phoneNumber: phoneNumber, email: email)
+        navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
     
 
     /*
