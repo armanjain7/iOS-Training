@@ -19,14 +19,17 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         let path = Bundle.main.path(forResource: "Name", ofType: "json")
         let url = URL(fileURLWithPath: path!)
-        do{
+        do {
             let data = try Data(contentsOf: url)
             let name = try JSONDecoder().decode([String].self, from: data)
             for items in name {
                 names.append(items)
             }
         }
-        catch{}
+        catch{
+            print("Parsing Error")
+        }
+        
         sectionTitle = Array(Set(names.compactMap({String($0.prefix(1))})))
         sectionTitle.sort()
         finalContact = names
@@ -72,16 +75,18 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
 extension ViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
        
-        searchContact = names.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        searchContact = names.filter({$0.lowercased().contains(searchText.lowercased())})
         finalContact = searchContact
         sectionTitle = Array(Set(finalContact.compactMap({value in
             String(value.prefix(1))
         })))
+        
         sectionTitle.sort()
-        for secTitle in sectionTitle{
+        for secTitle in sectionTitle {
             nameDict[secTitle] = [String]()
         }
-        for name in finalContact{
+        
+        for name in finalContact {
             nameDict[String(name.prefix(1))]?.append(name)
         }
         tableView.reloadData()
