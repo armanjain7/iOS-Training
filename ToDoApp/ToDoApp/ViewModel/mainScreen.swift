@@ -1,5 +1,5 @@
 //
-//  SignUpPage.swift
+//  mainScreen.swift
 //  ToDoApp
 //
 //  Created by Raramuri on 16/07/24.
@@ -7,12 +7,8 @@
 
 import UIKit
 
-class SignUpPage: UIViewController {
+class mainScreen: UIViewController {
 
-    
-    @IBOutlet weak var passwordTextField: UITextField!
-    
-    @IBOutlet weak var usernameTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,9 +16,6 @@ class SignUpPage: UIViewController {
     }
     
 
-    @IBAction func confirmDetails(_ sender: UIButton) {
-        
-    }
     /*
     // MARK: - Navigation
 
