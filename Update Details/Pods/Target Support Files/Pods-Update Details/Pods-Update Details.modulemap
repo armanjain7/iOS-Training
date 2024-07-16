@@ -1,0 +1,6 @@
+framework module Pods_Update_Details {
+  umbrella header "Pods-Update Details-umbrella.h"
+
+  export *
+  module * { export * }
+}

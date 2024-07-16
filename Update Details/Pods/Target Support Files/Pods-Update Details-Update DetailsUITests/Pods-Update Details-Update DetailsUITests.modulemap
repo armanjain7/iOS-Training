@@ -1,0 +1,6 @@
+framework module Pods_Update_Details_Update_DetailsUITests {
+  umbrella header "Pods-Update Details-Update DetailsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
