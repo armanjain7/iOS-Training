@@ -1,21 +1,21 @@
 //
-//  mainScreen.swift
+//  AllTasksViewController.swift
 //  ToDoApp
 //
-//  Created by Raramuri on 16/07/24.
+//  Created by Raramuri on 17/07/24.
 //
 
 import UIKit
 
-class mainScreen: UIViewController {
+class AllTasksViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
     
-    
+
     /*
     // MARK: - Navigation
 

@@ -11,6 +11,9 @@
 		B911EBD52C467939002FE790 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = B911EBD42C467939002FE790 /* FirebaseAuthCombine-Community */; };
 		B911EBD72C467E42002FE790 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B911EBD62C467E42002FE790 /* GoogleService-Info.plist */; };
 		B911EBD92C467FE6002FE790 /* mainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911EBD82C467FE6002FE790 /* mainScreen.swift */; };
+		B9396C522C47BDC400E6D6E7 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9396C512C47BDC400E6D6E7 /* ProfileController.swift */; };
+		B9396C542C47BE1000E6D6E7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9396C532C47BE1000E6D6E7 /* TabBarViewController.swift */; };
+		B9396C562C47C4B500E6D6E7 /* AllTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9396C552C47C4B500E6D6E7 /* AllTasksViewController.swift */; };
 		B996097C2C4641DE00BEDC03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B996097B2C4641DE00BEDC03 /* AppDelegate.swift */; };
 		B996097E2C4641DE00BEDC03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B996097D2C4641DE00BEDC03 /* SceneDelegate.swift */; };
 		B99609802C4641DE00BEDC03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B996097F2C4641DE00BEDC03 /* ViewController.swift */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		B911EBD62C467E42002FE790 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B911EBD82C467FE6002FE790 /* mainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainScreen.swift; sourceTree = "<group>"; };
+		B9396C512C47BDC400E6D6E7 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		B9396C532C47BE1000E6D6E7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		B9396C552C47C4B500E6D6E7 /* AllTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTasksViewController.swift; sourceTree = "<group>"; };
 		B99609782C4641DE00BEDC03 /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B996097B2C4641DE00BEDC03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B996097D2C4641DE00BEDC03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +61,9 @@
 				B99609922C4650ED00BEDC03 /* SignUpPage.swift */,
 				B911EBD82C467FE6002FE790 /* mainScreen.swift */,
 				B996097F2C4641DE00BEDC03 /* ViewController.swift */,
-				B911EBDC2C4683ED002FE790 /* View */,
+				B9396C512C47BDC400E6D6E7 /* ProfileController.swift */,
+				B9396C532C47BE1000E6D6E7 /* TabBarViewController.swift */,
+				B9396C552C47C4B500E6D6E7 /* AllTasksViewController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -90,6 +98,7 @@
 			children = (
 				B996097B2C4641DE00BEDC03 /* AppDelegate.swift */,
 				B996097D2C4641DE00BEDC03 /* SceneDelegate.swift */,
+				B911EBDC2C4683ED002FE790 /* View */,
 				B911EBDB2C4683D4002FE790 /* ViewModel */,
 				B99609872C4641E000BEDC03 /* Assets.xcassets */,
 				B996098C2C4641E000BEDC03 /* Info.plist */,
@@ -178,9 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9396C542C47BE1000E6D6E7 /* TabBarViewController.swift in Sources */,
+				B9396C522C47BDC400E6D6E7 /* ProfileController.swift in Sources */,
 				B99609802C4641DE00BEDC03 /* ViewController.swift in Sources */,
 				B99609932C4650ED00BEDC03 /* SignUpPage.swift in Sources */,
 				B996097C2C4641DE00BEDC03 /* AppDelegate.swift in Sources */,
+				B9396C562C47C4B500E6D6E7 /* AllTasksViewController.swift in Sources */,
 				B996097E2C4641DE00BEDC03 /* SceneDelegate.swift in Sources */,
 				B911EBD92C467FE6002FE790 /* mainScreen.swift in Sources */,
 				B99609862C4641DE00BEDC03 /* ToDoApp.xcdatamodeld in Sources */,

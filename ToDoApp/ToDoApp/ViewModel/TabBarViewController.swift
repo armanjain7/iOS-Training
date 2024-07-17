@@ -1,21 +1,29 @@
 //
-//  mainScreen.swift
+//  TabBarViewController.swift
 //  ToDoApp
 //
-//  Created by Raramuri on 16/07/24.
+//  Created by Raramuri on 17/07/24.
 //
-
+import Foundation
 import UIKit
 
-class mainScreen: UIViewController {
+class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        guard let viewControllers = viewControllers else{
+            return
+        }
+        for viewController in viewControllers {
+            if let profileController =  viewController as? ProfileController{
+                
+            }
+                
+        }
+     
         // Do any additional setup after loading the view.
     }
-    
-    
+   
     /*
     // MARK: - Navigation
 

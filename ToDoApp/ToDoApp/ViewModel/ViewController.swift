@@ -30,7 +30,7 @@ class ViewController: UIViewController {
                 self.present(alert, animated: true)
             }
             else{
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "mainscreen") as? mainScreen
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "main") as? TabBarViewController
                 self.navigationController?.pushViewController(vc!, animated: true)
             }
         }}

@@ -239,6 +239,25 @@
             </objects>
             <point key="canvasLocation" x="1744" y="4"/>
         </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="diz-Ht-8Pk">
+            <objects>
+                <tabBarController storyboardIdentifier="main" id="MGL-Zx-364" customClass="TabBarViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="8xb-Vd-Xqd"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AxR-ev-DS4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="U3Z-0Y-lJy" kind="relationship" relationship="viewControllers" id="p4w-Me-Ztg"/>
+                        <segue destination="xJE-EJ-u4Y" kind="relationship" relationship="viewControllers" id="sIh-zf-JzS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCg-Ox-Tx6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2749" y="-23"/>
+        </scene>
         <!--Main Screen-->
         <scene sceneID="0o0-4R-5U3">
             <objects>
@@ -246,14 +265,63 @@
                     <view key="view" contentMode="scaleToFill" id="dcD-Fq-Ius">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6o-Ko-y9H">
+                                <rect key="frame" x="16" y="95" width="139" height="50"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="En1-O8-UHa">
+                                <rect key="frame" x="147" y="95" width="94" height="50"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="32"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ANo-FM-FFy">
+                                <rect key="frame" x="0.0" y="153" width="393" height="558"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agE-DV-Zg3">
+                                <rect key="frame" x="292" y="719" width="85" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.17142010930000001" green="0.73825115399999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="+ New">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="21" name="TeluguSangamMN-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="charWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="5wq-Hx-OKn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="En1-O8-UHa" firstAttribute="top" secondItem="dcD-Fq-Ius" secondAttribute="top" constant="95" id="3Qe-dK-QLU"/>
+                            <constraint firstItem="5wq-Hx-OKn" firstAttribute="bottom" secondItem="C6o-Ko-y9H" secondAttribute="bottom" constant="624" id="3gh-Cc-Ue9"/>
+                            <constraint firstItem="5wq-Hx-OKn" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="En1-O8-UHa" secondAttribute="trailing" symbolic="YES" id="4Ai-mU-2bk"/>
+                            <constraint firstItem="ANo-FM-FFy" firstAttribute="top" secondItem="C6o-Ko-y9H" secondAttribute="top" constant="58" id="64P-ih-1SE"/>
+                            <constraint firstItem="C6o-Ko-y9H" firstAttribute="top" secondItem="dcD-Fq-Ius" secondAttribute="top" constant="95" id="BZo-NI-ACP"/>
+                            <constraint firstItem="C6o-Ko-y9H" firstAttribute="leading" secondItem="5wq-Hx-OKn" secondAttribute="leading" constant="16" id="Ddf-gj-ose"/>
+                            <constraint firstItem="5wq-Hx-OKn" firstAttribute="bottom" secondItem="En1-O8-UHa" secondAttribute="bottom" constant="624" id="Knu-cl-ayk"/>
+                            <constraint firstItem="5wq-Hx-OKn" firstAttribute="trailing" secondItem="ANo-FM-FFy" secondAttribute="trailing" id="Q5a-ai-7fO"/>
+                            <constraint firstItem="En1-O8-UHa" firstAttribute="leading" secondItem="5wq-Hx-OKn" secondAttribute="leading" constant="147" id="SPR-i4-vKI"/>
+                            <constraint firstItem="ANo-FM-FFy" firstAttribute="leading" secondItem="5wq-Hx-OKn" secondAttribute="leading" id="cYg-PQ-liW"/>
+                            <constraint firstItem="5wq-Hx-OKn" firstAttribute="trailing" secondItem="C6o-Ko-y9H" secondAttribute="trailing" constant="238" id="iQc-kn-ESo"/>
+                            <constraint firstAttribute="bottom" secondItem="ANo-FM-FFy" secondAttribute="bottom" constant="141" id="mN7-AM-Ms3"/>
+                            <constraint firstItem="En1-O8-UHa" firstAttribute="trailing" secondItem="C6o-Ko-y9H" secondAttribute="trailing" constant="86" id="rpL-J7-dWh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rdN-8C-wQZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEf-2s-VUy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2560" y="828"/>
+            <point key="canvasLocation" x="4770.2290076335876" y="-23.239436619718312"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hv8-kK-y3P">
@@ -273,9 +341,73 @@
             </objects>
             <point key="canvasLocation" x="78.625954198473281" y="3.5211267605633805"/>
         </scene>
+        <!--Today Task-->
+        <scene sceneID="IwA-Xu-nTE">
+            <objects>
+                <navigationController wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" id="U3Z-0Y-lJy" customClass="ProfileController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Today Task" image="Screenshot 2024-07-16 at 2.40.09 PM" id="YkS-5l-QJv">
+                        <color key="badgeColor" red="0.17142010930000001" green="0.73825115399999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6xJ-Zh-dHE">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WMf-Mn-Hq9">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="Sa3-uq-0sp" kind="relationship" relationship="rootViewController" id="1j1-yk-Cv1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TRg-FL-XKe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3843.5114503816794" y="-23.239436619718312"/>
+        </scene>
+        <!--All Tasks View Controller-->
+        <scene sceneID="rRg-A1-Lum">
+            <objects>
+                <viewController id="evI-2P-zyP" customClass="AllTasksViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VQi-KL-ET8">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="16K-iA-5gS"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AcJ-Fq-xw1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2FT-i5-yT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4695.419847328244" y="691.54929577464793"/>
+        </scene>
+        <!--All Task-->
+        <scene sceneID="PkL-9a-f04">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xJE-EJ-u4Y" customClass="ProfileController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="All Task" image="icons8-checklist-90" id="lAB-gs-e7u">
+                        <color key="badgeColor" red="0.17142010930000001" green="0.73825115399999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YhC-XA-L2D">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="evI-2P-zyP" kind="relationship" relationship="rootViewController" id="EVZ-UV-yMR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xvj-hx-Ze8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3768.7022900763359" y="691.54929577464793"/>
+        </scene>
     </scenes>
+    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Screenshot 2024-07-16 at 11.27.37 AM" width="538.66668701171875" height="368"/>
+        <image name="Screenshot 2024-07-16 at 2.40.09 PM" width="32" height="32"/>
+        <image name="icons8-checklist-90" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
