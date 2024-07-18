@@ -31,18 +31,26 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoItemTableViewCell", for: indexPath) as! TodoItemTableViewCell
         if indexPath.row == 0 {
             cell.colorLine.backgroundColor = .red
-            cell.leftImage.image = UIImage(named: "check-mark")
+            cell.images.image = UIImage(named: "Screenshot 2024-07-16 at 2.41.45 PM")
+            cell.Description.text = "Screenshot 2024-07-16 at 2.41.45 PM"
+            cell.details.text = "Screenshot 2024-07-16 at 2.41.45 PM"
+            cell.deadline.text = "Screenshot 2024-07-16 at 2.41.45 PM"
         } else if indexPath.row == 1 {
             cell.colorLine.backgroundColor = .orange
-            cell.leftImage.image = UIImage(named: "bell")
+            cell.images.image = UIImage(named: "Screenshot 2024-07-16 at 2.41.45 PM")
+            
         } else {
             cell.colorLine.backgroundColor = .blue
-            cell.leftImage.image = UIImage(named: "list")
+            cell.images.image = UIImage(named: "Screenshot 2024-07-16 at 2.41.45 PM")
         }
         
         return cell
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
 }
+
     
     /*
     // MARK: - Navigation

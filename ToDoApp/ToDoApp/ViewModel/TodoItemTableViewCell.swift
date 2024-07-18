@@ -12,8 +12,8 @@ class TodoItemTableViewCell: UITableViewCell {
     @IBOutlet weak var colorLine: UIView!
     
     @IBOutlet var images: UIImageView!
-    @IBOutlet weak var Deadline: UILabel!
-    @IBOutlet weak var Details: UILabel!
+    @IBOutlet weak var deadline: UILabel!
+    @IBOutlet weak var details: UILabel!
     @IBOutlet weak var Description: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,8 +26,12 @@ class TodoItemTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-    func commonInit(_name: String){
-        self.
+    func commonInit(_ Deadline: String, _ Details: String, _ description: String,_ image: String){
+        deadline.text = Deadline
+        details.text = Details
+        Description.text = description
+        images.image = UIImage(named: image)
+        
     }
     
 }
