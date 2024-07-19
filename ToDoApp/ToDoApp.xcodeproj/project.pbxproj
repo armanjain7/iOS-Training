@@ -14,6 +14,7 @@
 		B9396C522C47BDC400E6D6E7 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9396C512C47BDC400E6D6E7 /* ProfileController.swift */; };
 		B9396C542C47BE1000E6D6E7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9396C532C47BE1000E6D6E7 /* TabBarViewController.swift */; };
 		B9396C562C47C4B500E6D6E7 /* AllTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9396C552C47C4B500E6D6E7 /* AllTasksViewController.swift */; };
+		B9611C1A2C4A3988002DBFA6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9611C192C4A3988002DBFA6 /* Model.swift */; };
 		B98523E82C4900070056FC8A /* TodoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98523E72C4900070056FC8A /* TodoItemTableViewCell.swift */; };
 		B98523EA2C4900160056FC8A /* TodoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B98523E92C4900150056FC8A /* TodoItemTableViewCell.xib */; };
 		B98523EC2C49185B0056FC8A /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98523EB2C49185B0056FC8A /* NewTaskViewController.swift */; };
@@ -39,6 +40,7 @@
 		B9396C512C47BDC400E6D6E7 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		B9396C532C47BE1000E6D6E7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		B9396C552C47C4B500E6D6E7 /* AllTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTasksViewController.swift; sourceTree = "<group>"; };
+		B9611C192C4A3988002DBFA6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B98523E72C4900070056FC8A /* TodoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemTableViewCell.swift; sourceTree = "<group>"; };
 		B98523E92C4900150056FC8A /* TodoItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodoItemTableViewCell.xib; sourceTree = "<group>"; };
 		B98523EB2C49185B0056FC8A /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		B996097A2C4641DE00BEDC03 /* ToDoApp */ = {
 			isa = PBXGroup;
 			children = (
+				B9611C192C4A3988002DBFA6 /* Model.swift */,
 				B996097B2C4641DE00BEDC03 /* AppDelegate.swift */,
 				B996097D2C4641DE00BEDC03 /* SceneDelegate.swift */,
 				B911EBDC2C4683ED002FE790 /* View */,
@@ -218,6 +221,7 @@
 				B98523E82C4900070056FC8A /* TodoItemTableViewCell.swift in Sources */,
 				B9396C542C47BE1000E6D6E7 /* TabBarViewController.swift in Sources */,
 				B9396C522C47BDC400E6D6E7 /* ProfileController.swift in Sources */,
+				B9611C1A2C4A3988002DBFA6 /* Model.swift in Sources */,
 				B98523EC2C49185B0056FC8A /* NewTaskViewController.swift in Sources */,
 				B99609802C4641DE00BEDC03 /* ViewController.swift in Sources */,
 				B99609932C4650ED00BEDC03 /* SignUpPage.swift in Sources */,

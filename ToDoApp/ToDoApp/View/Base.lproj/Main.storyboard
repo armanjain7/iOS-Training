@@ -333,7 +333,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="newTask:" destination="Sa3-uq-0sp" eventType="touchUpInside" id="Uv8-3j-fGN"/>
+                                    <action selector="newTask:" destination="Sa3-uq-0sp" eventType="touchUpInside" id="Wsr-s5-ff8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -351,8 +351,8 @@
                             <constraint firstItem="5wq-Hx-OKn" firstAttribute="trailing" secondItem="6a2-hn-wXI" secondAttribute="trailing" constant="16" id="tpz-ph-7pu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="rdN-8C-wQZ">
-                        <barButtonItem key="backBarButtonItem" title="Logout" id="JzI-oQ-is0"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" style="browser" id="rdN-8C-wQZ">
+                        <barButtonItem key="backBarButtonItem" title="Logout" id="vIU-oM-TfD"/>
                     </navigationItem>
                     <connections>
                         <outlet property="TableViewController" destination="VlM-nb-KFq" id="uHs-yp-3Kz"/>
@@ -369,13 +369,53 @@
                     <view key="view" contentMode="scaleToFill" id="dyF-73-Zg3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OrF-W4-oSM">
+                                <rect key="frame" x="51" y="160" width="292" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DUh-a9-F3o">
+                                <rect key="frame" x="51" y="236" width="292" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zwx-Xp-bdm">
+                                <rect key="frame" x="27" y="278" width="339" height="127"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dpF-fd-fwQ">
+                                <rect key="frame" x="49" y="511" width="296" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpC-WK-nJ4">
+                                <rect key="frame" x="167" y="718" width="61" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="BQ5-eD-YEF" eventType="touchUpInside" id="Was-7S-ifv"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3k0-kq-UtO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="cQU-GF-070"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="date" destination="Zwx-Xp-bdm" id="hDs-af-QjB"/>
+                        <outlet property="details" destination="DUh-a9-F3o" id="ch6-4q-zzu"/>
+                        <outlet property="heading" destination="OrF-W4-oSM" id="3Gq-sU-qJB"/>
+                        <outlet property="slider" destination="dpF-fd-fwQ" id="cT0-Qb-j7b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBp-yW-2vE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5756" y="-23"/>
+            <point key="canvasLocation" x="5754.9618320610689" y="-23.239436619718312"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hv8-kK-y3P">
