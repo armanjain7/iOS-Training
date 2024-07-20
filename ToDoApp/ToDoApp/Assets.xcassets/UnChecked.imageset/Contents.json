@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "icons8-checked-checkbox-50.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "UnChecked@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
