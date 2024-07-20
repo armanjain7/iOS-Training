@@ -13,14 +13,6 @@ struct Model{
     var priority: Int
     var email: String
     var time: Int
-    
-    init(heading: String, details: String, deadline: String, priority: Int, email: String, time: Int) {
-        self.heading = heading
-        self.details = details
-        self.deadline = deadline
-        self.priority = priority
-        self.email = email
-        self.time = time
-    }
-    
+    var id: String
+    var isDone: Bool
 }

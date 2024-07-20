@@ -15,7 +15,7 @@ class TabBarViewController: UITabBarController {
             return
         }
         for viewController in viewControllers {
-            if let profileController =  viewController as? ProfileController{
+            if let profileController =  viewController as? ViewController{
                 
             }
                 

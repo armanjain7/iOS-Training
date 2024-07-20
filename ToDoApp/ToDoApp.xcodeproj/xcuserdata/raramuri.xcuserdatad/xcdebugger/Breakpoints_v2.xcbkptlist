@@ -50,36 +50,6 @@
             endingLineNumber = "31"
             landmarkName = "confirmDetails(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F4087A30-FD60-4ECA-83B3-98784289476B - 905612951c4e3629"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToDoApp.SignUpPage.confirmDetails(__C.UIButton) -&gt; ()"
-                  moduleName = "ToDoApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/raramuri/Desktop/Task/ToDoApp/ToDoApp/SignUpPage.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31">
-               </Location>
-               <Location
-                  uuid = "F4087A30-FD60-4ECA-83B3-98784289476B - c31f7fb8ef1870cb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ToDoApp.SignUpPage.confirmDetails(__C.UIButton) -&gt; ()"
-                  moduleName = "ToDoApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/raramuri/Desktop/Task/ToDoApp/ToDoApp/SignUpPage.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -156,8 +126,8 @@
             filePath = "ToDoApp/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
             landmarkName = "AppDelegate"
             landmarkType = "3">
          </BreakpointContent>
@@ -172,8 +142,8 @@
             filePath = "ToDoApp/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
