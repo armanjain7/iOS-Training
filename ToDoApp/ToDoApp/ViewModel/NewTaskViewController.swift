@@ -30,25 +30,9 @@ class NewTaskViewController: UIViewController {
     @IBAction func save(_ sender: Any) {
         if let id = docId {
             updateData(id)
-            if let navigationController = self.navigationController {
-                let viewControllers = navigationController.viewControllers
-                let numberOfViewControllers = viewControllers.count
-                
-                if numberOfViewControllers >= 3 {
-                    let targetViewController = viewControllers[numberOfViewControllers - 3]
-                    let viewControllerName = String(describing: type(of: targetViewController))
-                    
-                    if viewControllerName != "TodayMainViewController"{
-                        navigationController.popViewController(animated: true)
-                        
-                    } else {
-                        navigationController.popToViewController(targetViewController, animated: true)
-                    }
-                } else {
-                    // If less than three view controllers, just pop the current one
-                    navigationController.popViewController(animated: true)
-                }
-            }
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyBoard.instantiateViewController(identifier: "mainscreen") as? mainScreen
+            navigationController?.pushViewController(vc!, animated: true)
             
         } else {
             
@@ -59,11 +43,14 @@ class NewTaskViewController: UIViewController {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 let dateString = dateFormatter.string(from: date)
-                let priority = 1
-                db.collection("data").addDocument(data: ["heading": heading,
+                let priority = taskPriority
+                let newDoc = db.collection("data").document()
+                newDoc.setData(["heading": heading,
                                                          "details": details,
                                                          "priority":
                                                             priority,
+                                                         "isDone": false,
+                                                         "id": newDoc.documentID,
                                                          "date": dateString,
                                                          "email": sender,
                                                          "time": msgDate], completion: nil)
@@ -79,6 +66,19 @@ class NewTaskViewController: UIViewController {
         super.viewDidLoad()
         let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backButtonTapped))
         self.navigationItem.leftBarButtonItem = backButton
+        if let descriptionText  {
+            details.text = descriptionText
+        }
+        if let headingText  {
+            heading.text = headingText
+        }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        
+        if let deadlineText, let dateInDate = dateFormatter.date(from: deadlineText) {
+            date.date = dateInDate
+        }
         if let priorityText {
             switch priorityText {
             case "Low":
