@@ -20,7 +20,8 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var TableViewController: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
+        navigationItem.rightBarButtonItem = logoutButton
         TableViewController.dataSource = self
         TableViewController.delegate = self
         let nib = UINib(nibName: "TodoItemTableViewCell", bundle: nil)
@@ -28,6 +29,17 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
         loadData()
         
     }
+    @objc func logout() {
+            do {
+                try Auth.auth().signOut()
+                let loginVC = storyboard?.instantiateViewController(withIdentifier: "login") as! ViewController
+                let navigationController = UINavigationController(rootViewController: loginVC)
+                navigationController.modalPresentationStyle = .fullScreen
+                self.present(navigationController, animated: true, completion: nil)
+            } catch let signOutError as NSError {
+                print("Error signing out: %@", signOutError)
+            }
+        }
     
     func loadData(){
         db.collection("data").order(by: "time").addSnapshotListener({(QuerySnapshot,error) in
@@ -136,7 +148,7 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 120
     }
 }
     extension mainScreen: DeleteTodoItemFromTable{
@@ -153,11 +165,7 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
             default:
                 stringPriority = "Unspecified"
             }
-            
-            
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "newTask") as? NewTaskViewController
-            
-            
+            let vc = storyboard?.instantiateViewController(withIdentifier: "newTask") as? NewTaskViewController
             vc?.descriptionText = cell.details.text
             vc?.deadlineText = cell.deadline.text
             vc?.headingText = cell.Description.text
@@ -165,8 +173,8 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
             vc?.cameFromShow = 1
             vc?.docId = cell.docId
             
-            
-            self.navigationController?.pushViewController(vc!, animated: true)
+            let navigationController = UINavigationController(rootViewController: vc!)
+            self.present(navigationController, animated: true, completion: nil)
         }
         
         func taskCompleted(_ cell: TodoItemTableViewCell) {

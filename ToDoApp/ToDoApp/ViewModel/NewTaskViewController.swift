@@ -30,9 +30,24 @@ class NewTaskViewController: UIViewController {
     @IBAction func save(_ sender: Any) {
         if let id = docId {
             updateData(id)
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyBoard.instantiateViewController(identifier: "mainscreen") as? mainScreen
-            navigationController?.pushViewController(vc!, animated: true)
+            if let navigationController = self.navigationController {
+                        let viewControllers = navigationController.viewControllers
+                        let numberOfViewControllers = viewControllers.count
+                        
+                        if numberOfViewControllers >= 3 {
+                            let targetViewController = viewControllers[numberOfViewControllers - 3]
+                            let viewControllerName = String(describing: type(of: targetViewController))
+                            
+                            if viewControllerName != "mainScreen"{
+                                navigationController.popViewController(animated: true)
+
+                            } else {
+                                navigationController.popToViewController(targetViewController, animated: true)
+                            }
+                        } else {
+                            navigationController.popViewController(animated: true)
+                        }
+                    }
             
         } else {
             
@@ -60,7 +75,7 @@ class NewTaskViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
                 self.present(alert, animated: true)
             }
-            navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true)
         }}
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,20 +98,20 @@ class NewTaskViewController: UIViewController {
             switch priorityText {
             case "Low":
                 taskPriority = 0
-                imageView.backgroundColor = .blue
-                priorityButton.backgroundColor = .blue
+                imageView.backgroundColor = .systemBlue
+                priorityButton.backgroundColor = .systemBlue
                 print(0)
             case "Medium":
                 taskPriority = 1
-                imageView.backgroundColor = .yellow
-                priorityButton.backgroundColor = .yellow
+                imageView.backgroundColor = .systemYellow
+                priorityButton.backgroundColor = .systemYellow
                 print(0)
                 
                 
             case "High":
                 taskPriority = 2
-                imageView.backgroundColor = .red
-                priorityButton.backgroundColor = .red
+                imageView.backgroundColor = .systemRed
+                priorityButton.backgroundColor = .systemRed
                 print(0)
                 
                 
@@ -111,7 +126,7 @@ class NewTaskViewController: UIViewController {
         
         print(db)
         
-        imageView.layer.cornerRadius = imageView.frame.size.width/2
+        imageView.layer.cornerRadius = imageView.frame.size.width/4
         imageView.clipsToBounds = true
         
         

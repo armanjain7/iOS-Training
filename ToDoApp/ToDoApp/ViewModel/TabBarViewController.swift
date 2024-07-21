@@ -11,13 +11,7 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let viewControllers = viewControllers else{
-            return
-        }
-        for viewController in viewControllers {
-            if let profileController =  viewController as? ViewController{
-                
-            }
+        
                 
         }
      
@@ -34,4 +28,3 @@ class TabBarViewController: UITabBarController {
     }
     */
 
-}

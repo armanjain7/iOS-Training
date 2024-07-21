@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="BYZ-38-t0r" customClass="ViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -279,7 +279,7 @@
             </objects>
             <point key="canvasLocation" x="2749" y="-23"/>
         </scene>
-        <!--Item-->
+        <!--Tasks-->
         <scene sceneID="0o0-4R-5U3">
             <objects>
                 <viewController storyboardIdentifier="mainscreen" id="Sa3-uq-0sp" customClass="mainScreen" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -351,7 +351,7 @@
                             <constraint firstItem="5wq-Hx-OKn" firstAttribute="trailing" secondItem="6a2-hn-wXI" secondAttribute="trailing" constant="16" id="tpz-ph-7pu"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="Screenshot 2024-07-16 at 2.40.09 PM" id="Luy-x4-6Z2"/>
+                    <tabBarItem key="tabBarItem" title="Tasks" image="Screenshot 2024-07-16 at 2.40.09 PM" id="Luy-x4-6Z2"/>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" style="browser" id="rdN-8C-wQZ">
                         <barButtonItem key="backBarButtonItem" title="Logout" id="vIU-oM-TfD"/>
                     </navigationItem>
@@ -444,7 +444,7 @@
             </objects>
             <point key="canvasLocation" x="78.625954198473281" y="3.5211267605633805"/>
         </scene>
-        <!--Item-->
+        <!--All-->
         <scene sceneID="rRg-A1-Lum">
             <objects>
                 <viewController id="evI-2P-zyP" customClass="AllTasksViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -454,7 +454,7 @@
                         <viewLayoutGuide key="safeArea" id="16K-iA-5gS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="icons8-checklist-90" id="HL8-n9-M1s"/>
+                    <tabBarItem key="tabBarItem" title="All" image="icons8-checklist-90" id="HL8-n9-M1s"/>
                     <navigationItem key="navigationItem" id="AcJ-Fq-xw1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2FT-i5-yT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
