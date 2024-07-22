@@ -111,7 +111,7 @@ class NewTaskViewController: UIViewController {
                 priorityButton.backgroundColor = .blue
             }
         }
-        imageView.layer.cornerRadius = imageView.frame.size.width/4
+        imageView.layer.cornerRadius = imageView.frame.size.width/2
         imageView.clipsToBounds = true
         let highPriority = UIAction(title: "High") { _ in
             self.taskPriority = 2
@@ -167,19 +167,6 @@ class NewTaskViewController: UIViewController {
                 return
             }
         }
-        
-        // Do any additional setup after loading the view.
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
 }
 

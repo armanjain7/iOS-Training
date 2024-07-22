@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "icons8-checkbox-24.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -10,6 +9,7 @@
       "scale" : "2x"
     },
     {
+      "filename" : "icons8-todo-list-96.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -22,34 +22,30 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fE-uf-98z">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screenshot 2024-07-16 at 11.27.37 AM" translatesAutoresizingMaskIntoConstraints="NO" id="hnQ-a0-eOf">
-                                                <rect key="frame" x="0.0" y="-18" width="393" height="912"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ToDo List" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NR1-gy-SVM">
-                                                <rect key="frame" x="117.66666666666669" y="407.66666666666669" width="158" height="37"/>
-                                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="30"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screenshot 2024-07-16 at 2.41.45 PM" translatesAutoresizingMaskIntoConstraints="NO" id="Pqt-pF-oYJ">
-                                                <rect key="frame" x="117.66666666666669" y="162" width="158" height="211"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" highlightedImage="icon" translatesAutoresizingMaskIntoConstraints="NO" id="Pqt-pF-oYJ">
+                                                <rect key="frame" x="60" y="162" width="270" height="211"/>
+                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="211" id="p4l-gt-VDo"/>
+                                                    <constraint firstAttribute="height" constant="211" id="Cmg-3E-ulz"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="            ToDo List" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NR1-gy-SVM">
+                                                <rect key="frame" x="-3.6666666666666572" y="407.66666666666669" width="400.33333333333326" height="36.666666666666686"/>
+                                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="30"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                        <color key="tintColor" systemColor="systemGray4Color"/>
                                         <constraints>
-                                            <constraint firstItem="hnQ-a0-eOf" firstAttribute="top" secondItem="4fE-uf-98z" secondAttribute="top" constant="-18" id="NML-14-3z1"/>
-                                            <constraint firstItem="NR1-gy-SVM" firstAttribute="centerX" secondItem="4fE-uf-98z" secondAttribute="centerX" id="PI1-FJ-Z8v"/>
-                                            <constraint firstAttribute="bottom" secondItem="hnQ-a0-eOf" secondAttribute="bottom" constant="-42" id="W6K-Uc-P2R"/>
-                                            <constraint firstItem="NR1-gy-SVM" firstAttribute="centerY" secondItem="4fE-uf-98z" secondAttribute="centerY" id="WdU-1a-N3l"/>
-                                            <constraint firstAttribute="trailing" secondItem="hnQ-a0-eOf" secondAttribute="trailing" id="krF-iL-0Cz"/>
-                                            <constraint firstItem="NR1-gy-SVM" firstAttribute="top" secondItem="Pqt-pF-oYJ" secondAttribute="bottom" constant="34.666666666666629" id="pdc-j2-1Li"/>
-                                            <constraint firstItem="NR1-gy-SVM" firstAttribute="centerX" secondItem="4fE-uf-98z" secondAttribute="centerX" id="quc-5o-q3l"/>
-                                            <constraint firstItem="hnQ-a0-eOf" firstAttribute="leading" secondItem="4fE-uf-98z" secondAttribute="leading" id="vWU-br-MCL"/>
-                                            <constraint firstItem="Pqt-pF-oYJ" firstAttribute="centerX" secondItem="4fE-uf-98z" secondAttribute="centerX" id="wah-kL-yY3"/>
-                                            <constraint firstItem="NR1-gy-SVM" firstAttribute="leading" secondItem="Pqt-pF-oYJ" secondAttribute="leading" id="zfE-As-vyN"/>
+                                            <constraint firstItem="NR1-gy-SVM" firstAttribute="centerX" secondItem="4fE-uf-98z" secondAttribute="centerX" id="aYV-fa-L3b"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pqt-pF-oYJ" secondAttribute="trailing" constant="63" id="eZy-vC-YWt"/>
+                                            <constraint firstItem="Pqt-pF-oYJ" firstAttribute="top" secondItem="4fE-uf-98z" secondAttribute="top" constant="162" id="fwQ-yN-4Mu"/>
+                                            <constraint firstItem="Pqt-pF-oYJ" firstAttribute="leading" secondItem="4fE-uf-98z" secondAttribute="leading" constant="60" id="iMu-8e-lNy"/>
+                                            <constraint firstItem="NR1-gy-SVM" firstAttribute="top" secondItem="Pqt-pF-oYJ" secondAttribute="bottom" constant="34.666666666666686" id="ixL-Hq-vgk"/>
+                                            <constraint firstItem="NR1-gy-SVM" firstAttribute="centerY" secondItem="4fE-uf-98z" secondAttribute="centerY" id="rNT-m8-eDz"/>
+                                            <constraint firstItem="NR1-gy-SVM" firstAttribute="leading" secondItem="4fE-uf-98z" secondAttribute="leading" constant="-3.6666666666666572" id="us4-r5-KuX"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -81,10 +77,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Screenshot 2024-07-16 at 11.27.37 AM" width="538.66668701171875" height="368"/>
-        <image name="Screenshot 2024-07-16 at 2.41.45 PM" width="96" height="112"/>
+        <image name="icon" width="400" height="400"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

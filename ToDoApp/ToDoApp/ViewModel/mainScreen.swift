@@ -29,7 +29,7 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
         loadData()
         
     }
-    @objc func logout() {
+   @objc func logout() {
             do {
                 try Auth.auth().signOut()
                 let loginVC = storyboard?.instantiateViewController(withIdentifier: "login") as! ViewController
@@ -82,7 +82,6 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
                 }
         })
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.count
     }
@@ -123,8 +122,8 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
         cell.Description.text = model[indexPath.row].heading
         cell.details.text = model[indexPath.row].details
         cell.deadline.text = model[indexPath.row].deadline
-        cell.button.setImage(UIImage(named: "UnChecked"), for: .normal)
-        cell.button.setImage(UIImage(named: "Checked"), for: .selected)
+        cell.button.setImage(UIImage(named: "untick"), for: .normal)
+        cell.button.setImage(UIImage(named: "tick"), for: .selected)
         if(model[indexPath.row].isDone == true) {
             cell.button.isSelected = true
         } else {
@@ -161,60 +160,49 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
         return 120
     }
 }
-    extension mainScreen: DeleteTodoItemFromTable{
-        func editCell(_ cell: TodoItemTableViewCell) {
-            var stringPriority: String
-            
-            switch cell.priority{
-            case 2:
-                stringPriority = "High"
-            case 1:
-                stringPriority = "Medium"
-            case 0:
-                stringPriority = "Low"
-            default:
-                stringPriority = "Unspecified"
-            }
-            let vc = storyboard?.instantiateViewController(withIdentifier: "newTask") as? NewTaskViewController
-            vc?.descriptionText = cell.details.text
-            vc?.deadlineText = cell.deadline.text
-            vc?.headingText = cell.Description.text
-            vc?.priorityText = stringPriority
-            vc?.cameFromShow = 1
-            vc?.docId = cell.docId
-            
-            let navigationController = UINavigationController(rootViewController: vc!)
-            self.present(navigationController, animated: true, completion: nil)
-        }
+extension mainScreen: DeleteTodoItemFromTable{
+    func editCell(_ cell: TodoItemTableViewCell) {
+        var stringPriority: String
         
-        func taskCompleted(_ cell: TodoItemTableViewCell) {
-            guard let docId = cell.docId , let isDone = cell.isDone else { return }
-                db.collection("data").document(docId).updateData([
-                    "isDone": !isDone ])
-                { error in
-                    if let error = error {
-                        let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
-                        self.present(alert, animated: true)
-                } 
-                else {
-                    DispatchQueue.main.async {
+        switch cell.priority{
+        case 2:
+            stringPriority = "High"
+        case 1:
+            stringPriority = "Medium"
+        case 0:
+            stringPriority = "Low"
+        default:
+            stringPriority = "Unspecified"
+        }
+        let vc = storyboard?.instantiateViewController(withIdentifier: "newTask") as? NewTaskViewController
+        vc?.descriptionText = cell.details.text
+        vc?.deadlineText = cell.deadline.text
+        vc?.headingText = cell.Description.text
+        vc?.priorityText = stringPriority
+        vc?.cameFromShow = 1
+        vc?.docId = cell.docId
+        
+        let navigationController = UINavigationController(rootViewController: vc!)
+        self.present(navigationController, animated: true, completion: nil)
+    }
+    
+    func taskCompleted(_ cell: TodoItemTableViewCell) {
+        guard let docId = cell.docId , let isDone = cell.isDone else { return }
+        db.collection("data").document(docId).updateData([
+            "isDone": !isDone ])
+        { error in
+            if let error = error {
+                let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
+                self.present(alert, animated: true)
+            } 
+            else {
+                DispatchQueue.main.async {
                     self.loadData()
                     self.TableViewController.reloadData()
-                    }
                 }
             }
         }
-        
-        
-        /*
-         // MARK: - Navigation
-         
-         // In a storyboard-based application, you will often want to do a little preparation before navigation
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-         }
-         */
-        
     }
+}
+        

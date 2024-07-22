@@ -33,7 +33,6 @@ class TodoItemTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
     @IBAction func editButtonTapped(_ sender: Any) {
         delegate?.editCell(self)
@@ -41,7 +40,5 @@ class TodoItemTableViewCell: UITableViewCell {
     @IBAction func alterButton(_ sender: UIButton) {
         sender.isSelected.toggle()
         delegate?.taskCompleted(self)
-    }
-    
-    
+    }  
 }

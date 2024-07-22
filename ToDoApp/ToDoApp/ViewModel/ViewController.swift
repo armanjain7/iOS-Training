@@ -12,10 +12,17 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var Username: UITextField!
     @IBOutlet weak var Password: UITextField!
+    var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupActivityIndicator()
     }
+    func setupActivityIndicator() {
+            activityIndicator = UIActivityIndicatorView(style: .large)
+                activityIndicator.center = view.center
+                activityIndicator.hidesWhenStopped = true
+                view.addSubview(activityIndicator)
+            }
     @IBAction func signIn(_ sender: Any) {
         guard let username = Username.text else {
             return
@@ -23,17 +30,22 @@ class ViewController: UIViewController {
         guard let password = Password.text else {
             return
         }
+        
+        activityIndicator.startAnimating()
         Auth.auth().signIn(withEmail: username, password: password) { firebaseResult, error in
             if error != nil {
                 let alert = UIAlertController(title: "Wrong Email/Password", message: nil, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
+                self.activityIndicator.stopAnimating()
                 self.present(alert, animated: true)
             }
             else{
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "main") as? TabBarViewController
+                
                 self.navigationController?.pushViewController(vc!, animated: true)
             }
-        }}
+        }
+    }
         
     @IBAction func signUp(_ sender: Any) {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "second") as? SignUpPage
