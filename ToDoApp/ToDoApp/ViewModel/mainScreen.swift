@@ -60,13 +60,22 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
                             let time = data["time"]  as? Int
                             let id = data["id"] as? String
                             let isDone = data["isDone"] as? Bool
-                                if(Auth.auth().currentUser?.email == email ){
-                                    let item = Model(heading: heading, details: details, deadline: date, priority: priority, email: email, time: time ?? 0, id: id ?? "" , isDone: isDone ?? false)
-                                    
-                                    self.model.append(item)
-                                    
-                                }
+                            if(Auth.auth().currentUser?.email == email ){
+                                let item = Model(heading: heading, details: details, deadline: date, priority: priority, email: email, time: time ?? 0, id: id ?? "" , isDone: isDone ?? false)
                                 
+                                self.model.append(item)
+                                
+                            }
+                            self.model.sort { (item1, item2) -> Bool in
+                                if item1.isDone == item2.isDone{
+                                    let dateFormatter = DateFormatter()
+                                    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                                    let date1 = dateFormatter.date(from: item1.deadline) ?? Date()
+                                    let date2 = dateFormatter.date(from: item2.deadline) ?? Date()
+                                    return date1 < date2
+                                }
+                                return !item1.isDone && item2.isDone
+                            }
                                 DispatchQueue.main.async {
                                     self.TableViewController.reloadData()
                                 }

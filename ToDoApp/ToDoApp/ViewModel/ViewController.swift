@@ -44,8 +44,8 @@ class ViewController: UIViewController {
         alert.addTextField { (textField) in
             textField.placeholder = "Email"
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let resetAction = UIAlertAction(title: "Reset", style: .default) { [weak self] (_) in
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let reset = UIAlertAction(title: "Reset", style: .default) { [weak self] (_) in
             guard let email = alert.textFields?.first?.text, !email.isEmpty else {
                 let errorAlert = UIAlertController(title: "Error", message: "Please enter a valid email address", preferredStyle: .alert)
                 errorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -64,8 +64,8 @@ class ViewController: UIViewController {
                 }
             }
         }
-        alert.addAction(cancelAction)
-        alert.addAction(resetAction)
+        alert.addAction(cancel)
+        alert.addAction(reset)
         self.present(alert, animated: true, completion: nil)
     }
 }

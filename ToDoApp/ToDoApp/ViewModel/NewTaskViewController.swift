@@ -74,8 +74,7 @@ class NewTaskViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
                 self.present(alert, animated: true)
             }
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "mainscreen") as? mainScreen
-            self.present(vc!, animated: true)
+            self.dismiss(animated: true)
         }}
     override func viewDidLoad() {
         super.viewDidLoad()
