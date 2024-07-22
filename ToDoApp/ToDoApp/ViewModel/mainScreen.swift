@@ -54,8 +54,6 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
                 if let docs = QuerySnapshot?.documents {
                     for doc in docs{
                         let data = doc.data()
-                        
-                        
                         if let heading = data["heading"] as? String, let details = data["details"] as? String, let date = data["date"] as? String, let priority = data["priority"] as? Int, let email = data["email"] as? String{
                             let time = data["time"]  as? Int
                             let id = data["id"] as? String
@@ -64,7 +62,6 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
                                 let item = Model(heading: heading, details: details, deadline: date, priority: priority, email: email, time: time ?? 0, id: id ?? "" , isDone: isDone ?? false)
                                 
                                 self.model.append(item)
-                                
                             }
                             self.model.sort { (item1, item2) -> Bool in
                                 if item1.isDone == item2.isDone{
@@ -77,7 +74,7 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
                                 return !item1.isDone && item2.isDone
                             }
                                 DispatchQueue.main.async {
-                                    self.TableViewController.reloadData()
+                                self.TableViewController.reloadData()
                                 }
                             }
                         }
@@ -150,9 +147,10 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
                     let alert = UIAlertController(title: "Error removing task", message: "\(error)", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
                     self.present(alert, animated: true)
-                } else {
+                } 
+                else {
                     DispatchQueue.main.async {
-                        self.TableViewController.reloadData()
+                    self.TableViewController.reloadData()
                     }
                     
                 }
@@ -191,17 +189,18 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
         
         func taskCompleted(_ cell: TodoItemTableViewCell) {
             guard let docId = cell.docId , let isDone = cell.isDone else { return }
-            db.collection("data").document(docId).updateData([
-                "isDone": !isDone ]
-            ) { error in
-                if let error = error {
-                    let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
-                    self.present(alert, animated: true)
-                } else {
+                db.collection("data").document(docId).updateData([
+                    "isDone": !isDone ])
+                { error in
+                    if let error = error {
+                        let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
+                        self.present(alert, animated: true)
+                } 
+                else {
                     DispatchQueue.main.async {
-                        self.loadData()
-                        self.TableViewController.reloadData()
+                    self.loadData()
+                    self.TableViewController.reloadData()
                     }
                 }
             }
