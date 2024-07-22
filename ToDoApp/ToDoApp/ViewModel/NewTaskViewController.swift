@@ -25,7 +25,6 @@ class NewTaskViewController: UIViewController {
     var deadlineText: String?
     var cameFromShow: Int?
     var docId: String?
-    
     var taskPriority = 0
     @IBAction func save(_ sender: Any) {
         if let id = docId {
@@ -45,7 +44,7 @@ class NewTaskViewController: UIViewController {
                                 navigationController.popToViewController(targetViewController, animated: true)
                             }
                         } else {
-                            navigationController.popViewController(animated: true)
+                            navigationController.dismiss(animated: true)
                         }
                     }
             
@@ -123,9 +122,6 @@ class NewTaskViewController: UIViewController {
             }
         }
         
-        
-        print(db)
-        
         imageView.layer.cornerRadius = imageView.frame.size.width/4
         imageView.clipsToBounds = true
         
@@ -159,16 +155,17 @@ class NewTaskViewController: UIViewController {
         
     }
     @objc func backButtonTapped() {
-        
         self.dismiss(animated: true, completion: nil)
     }
     func updateData(_ id: String) {
         guard  let _ = heading.text else {
-            print("Missing fields for update")
+            let alert = UIAlertController(title: "No heading", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
+            self.present(alert, animated: true)
             return
         }
         
-        let documentRef = db.collection("todoData").document(id)
+        let documentRef = db.collection("data").document(id)
         
         let date = date.date
         let dateFormatter = DateFormatter()
@@ -185,9 +182,11 @@ class NewTaskViewController: UIViewController {
                                 "isDone": false,
                                 "time": Date().timeIntervalSince1970]) { error in
             if let error = error {
-                print("Error updating document: \(error.localizedDescription)")
+                let alert = UIAlertController(title: "Data not saved", message: "\(error.localizedDescription)", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
+                self.present(alert, animated: true)
             } else {
-                print("Document successfully updated")
+                return
             }
         }
         

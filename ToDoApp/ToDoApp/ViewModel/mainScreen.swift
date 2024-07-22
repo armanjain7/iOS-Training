@@ -36,8 +36,10 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
                 let navigationController = UINavigationController(rootViewController: loginVC)
                 navigationController.modalPresentationStyle = .fullScreen
                 self.present(navigationController, animated: true, completion: nil)
-            } catch let signOutError as NSError {
-                print("Error signing out: %@", signOutError)
+            } catch _ as NSError {
+                let alert = UIAlertController(title: "Error", message:  nil, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
+                self.present(alert, animated: true)
             }
         }
     
@@ -45,8 +47,9 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
         db.collection("data").order(by: "time").addSnapshotListener({(QuerySnapshot,error) in
             self.model = []
             if((error) != nil){
-                print(error!)
-                print("no")
+                let alert = UIAlertController(title: "Data not saved", message:  "\(String(describing: error?.localizedDescription))", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
+                self.present(alert, animated: true)
             }else{
                 if let docs = QuerySnapshot?.documents {
                     for doc in docs{
@@ -114,7 +117,7 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
         cell.Description.text = model[indexPath.row].heading
         cell.details.text = model[indexPath.row].details
         cell.deadline.text = model[indexPath.row].deadline
-        cell.button.setImage(UIImage(named: "unChecked"), for: .normal)
+        cell.button.setImage(UIImage(named: "UnChecked"), for: .normal)
         cell.button.setImage(UIImage(named: "Checked"), for: .selected)
         if(model[indexPath.row].isDone == true) {
             cell.button.isSelected = true
