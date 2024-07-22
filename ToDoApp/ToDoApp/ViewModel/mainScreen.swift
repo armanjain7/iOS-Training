@@ -138,10 +138,10 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
             let docId = task.id
             db.collection("data").document(docId).delete { error in
                 if let error = error {
-                    print("Error removing document: \(error)")
+                    let alert = UIAlertController(title: "Error removing task", message: "\(error)", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
+                    self.present(alert, animated: true)
                 } else {
-                    print("Document successfully removed!")
-                    
                     DispatchQueue.main.async {
                         self.TableViewController.reloadData()
                     }
@@ -186,9 +186,10 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
                 "isDone": !isDone ]
             ) { error in
                 if let error = error {
-                    print("Error updating document: \(error.localizedDescription)")
+                    let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
+                    self.present(alert, animated: true)
                 } else {
-                    print("Document successfully updated")
                     DispatchQueue.main.async {
                         self.loadData()
                         self.TableViewController.reloadData()

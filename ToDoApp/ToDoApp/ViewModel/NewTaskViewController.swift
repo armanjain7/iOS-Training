@@ -37,7 +37,7 @@ class NewTaskViewController: UIViewController {
                             let targetViewController = viewControllers[numberOfViewControllers - 3]
                             let viewControllerName = String(describing: type(of: targetViewController))
                             
-                            if viewControllerName != "mainScreen"{
+                            if viewControllerName != "mainScreen" && viewControllerName != "TabBarViewController"{
                                 navigationController.popViewController(animated: true)
 
                             } else {
@@ -74,7 +74,8 @@ class NewTaskViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
                 self.present(alert, animated: true)
             }
-            self.dismiss(animated: true)
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "mainscreen") as? mainScreen
+            self.present(vc!, animated: true)
         }}
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,26 +100,21 @@ class NewTaskViewController: UIViewController {
                 taskPriority = 0
                 imageView.backgroundColor = .systemBlue
                 priorityButton.backgroundColor = .systemBlue
-                print(0)
+              
             case "Medium":
                 taskPriority = 1
                 imageView.backgroundColor = .systemYellow
                 priorityButton.backgroundColor = .systemYellow
-                print(0)
-                
                 
             case "High":
                 taskPriority = 2
                 imageView.backgroundColor = .systemRed
                 priorityButton.backgroundColor = .systemRed
-                print(0)
-                
                 
             default:
                 taskPriority = 0
                 imageView.backgroundColor = .blue
                 priorityButton.backgroundColor = .blue
-                print(0)
             }
         }
         
