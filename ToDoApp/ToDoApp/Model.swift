@@ -8,7 +8,7 @@
 import Foundation
 struct Model{
     var heading: String
-    var details: String
+    var details: String?
     var deadline: String
     var priority: Int
     var email: String

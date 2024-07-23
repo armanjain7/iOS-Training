@@ -26,6 +26,7 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
         TableViewController.delegate = self
         let nib = UINib(nibName: "TodoItemTableViewCell", bundle: nil)
         TableViewController.register(nib, forCellReuseIdentifier: "TodoItemTableViewCell")
+        TableViewController.reloadData()
         loadData()
         
     }
@@ -69,7 +70,7 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
                                     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                                     let date1 = dateFormatter.date(from: item1.deadline) ?? Date()
                                     let date2 = dateFormatter.date(from: item2.deadline) ?? Date()
-                                    return date1 < date2
+                                    return date1 > date2
                                 }
                                 return !item1.isDone && item2.isDone
                             }

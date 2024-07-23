@@ -50,7 +50,7 @@ class NewTaskViewController: UIViewController {
             }
             
         } else {
-            if let heading = heading?.text, !heading.isEmpty, let details = details.text, !details.isEmpty, let date = date?.date, let sender = Auth.auth().currentUser?.email
+            if let heading = heading?.text, !heading.isEmpty, let details = details.text, let date = date?.date, let sender = Auth.auth().currentUser?.email
             {
                 let msgDate = Date().timeIntervalSince1970
                 let dateFormatter = DateFormatter()
@@ -66,15 +66,15 @@ class NewTaskViewController: UIViewController {
                                 "date": dateString,
                                 "email": sender,
                                 "time": msgDate], completion: nil)
+                self.dismiss(animated: true)
             }
             else{
                 let alert = UIAlertController(title: "Data not saved", message: nil, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
                 self.present(alert, animated: true)
             }
-            self.dismiss(animated: true)
         }
-    }
+        }
     override func viewDidLoad() {
         super.viewDidLoad()
         let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backButtonTapped))

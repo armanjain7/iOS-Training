@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         let db = Firestore.firestore()
         print(db)
-        Thread.sleep(forTimeInterval:1)
+        Thread.sleep(forTimeInterval:3)
         return true
     }
 

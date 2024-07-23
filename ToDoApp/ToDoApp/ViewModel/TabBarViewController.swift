@@ -19,6 +19,10 @@ class TabBarViewController: UITabBarController {
         gear.tintColor = UIColor.black
         filter.tintColor = UIColor.black
         navigationItem.rightBarButtonItems = [gear,filter]
+        let filtering = UIAction(title: "Filter(Coming Soon)") { _ in
+        }
+        let menu1 = UIMenu(title: "", children: [filtering])
+        filter.menu = menu1
         let logout = UIAction(title: "Logout") { _ in
                 let confirm = UIAlertController(title: "Are you sure, You want to log out?", message: nil, preferredStyle: .alert)
                 confirm.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: {

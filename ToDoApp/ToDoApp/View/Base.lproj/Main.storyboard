@@ -28,7 +28,7 @@
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="fill" text="arman@outlook.com" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H0O-3r-qgX">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="fill" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H0O-3r-qgX">
                                                 <rect key="frame" x="57" y="409" width="274" height="34"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,13 +45,13 @@
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="armanjain1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G7Y-je-ap8">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G7Y-je-ap8">
                                                 <rect key="frame" x="57" y="491" width="274" height="34"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmv-TQ-BwS">
                                                 <rect key="frame" x="69" y="649" width="262" height="35"/>
@@ -247,6 +247,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wM2-Fb-Etr"/>
                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Beb-Oj-uEm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OCV-2h-Yjp" secondAttribute="leading" id="0E7-8L-lrM"/>
                             <constraint firstItem="X64-0d-VjV" firstAttribute="trailing" secondItem="OCV-2h-Yjp" secondAttribute="trailing" id="3bf-RP-weo"/>
@@ -256,6 +257,7 @@
                             <constraint firstItem="4YO-8n-bz1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="84k-yi-02s" secondAttribute="leading" id="EOI-fO-HsW"/>
                             <constraint firstItem="YJ5-bT-iI3" firstAttribute="top" secondItem="wM2-Fb-Etr" secondAttribute="top" constant="185" id="FbJ-6H-Da8"/>
                             <constraint firstItem="84k-yi-02s" firstAttribute="top" secondItem="4YO-8n-bz1" secondAttribute="bottom" constant="8" id="JaL-6c-xGe"/>
+                            <constraint firstItem="Beb-Oj-uEm" firstAttribute="trailing" secondItem="4YO-8n-bz1" secondAttribute="trailing" id="Jro-39-7Zb"/>
                             <constraint firstItem="YJ5-bT-iI3" firstAttribute="centerX" secondItem="Y5Z-X9-dW0" secondAttribute="centerX" id="Mkp-hB-TTw"/>
                             <constraint firstItem="wM2-Fb-Etr" firstAttribute="trailing" secondItem="84k-yi-02s" secondAttribute="trailing" constant="64" id="Nnh-zh-siv"/>
                             <constraint firstItem="YJ5-bT-iI3" firstAttribute="leading" secondItem="wM2-Fb-Etr" secondAttribute="leading" constant="55" id="Oty-2k-HgM"/>
@@ -546,7 +548,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="16K-iA-5gS"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="All" image="icons8-checklist-90" id="HL8-n9-M1s">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

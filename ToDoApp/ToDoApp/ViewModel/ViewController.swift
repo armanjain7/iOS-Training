@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         activityIndicator.startAnimating()
         Auth.auth().signIn(withEmail: username, password: password) { firebaseResult, error in
             if error != nil {
-                let alert = UIAlertController(title: "Wrong Email/Password", message: nil, preferredStyle: .alert)
+                let alert = UIAlertController(title: "Wrong Email/Password", message: "\(String(describing: error?.localizedDescription))", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
                 self.activityIndicator.stopAnimating()
                 self.present(alert, animated: true)
