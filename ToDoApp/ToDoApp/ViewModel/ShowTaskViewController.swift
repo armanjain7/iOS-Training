@@ -14,7 +14,7 @@ class ShowTaskViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     var priority = 0
-
+    var isDone: Bool?
     var taskHeading: String?
     var taskDescription: String?
     var taskDeadline: String?
@@ -52,7 +52,7 @@ class ShowTaskViewController: UIViewController {
         vc?.priorityText = priorityLabel.text
         vc?.cameFromShow = 1
         vc?.docId = docId
-        
+        vc?.isDone = isDone
         
         self.navigationController?.pushViewController(vc!, animated: true)
     }

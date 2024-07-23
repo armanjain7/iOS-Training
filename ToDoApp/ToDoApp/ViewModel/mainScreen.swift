@@ -141,19 +141,22 @@ class mainScreen: UIViewController,UITableViewDataSource,UITableViewDelegate {
         if editingStyle == .delete {
             let task = model[indexPath.row]
             let docId = task.id
-            db.collection("data").document(docId).delete { error in
-                if let error = error {
-                    let alert = UIAlertController(title: "Error removing task", message: "\(error)", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
-                    self.present(alert, animated: true)
-                } 
-                else {
-                    DispatchQueue.main.async {
-                    self.TableViewController.reloadData()
+            let alert = UIAlertController(title: "Delete Task", message: "Are you sure you want to delete this task?", preferredStyle: .alert)
+            let no = UIAlertAction(title: "No", style: .default)
+            let yes = UIAlertAction(title: "Yes", style: .cancel,handler: { _ in
+                self.db.collection("data").document(docId).delete { error in
+                    if let error = error {
+                        print("Error removing document: \(error)")
+                    } else {
+                        DispatchQueue.main.async {
+                            self.TableViewController.reloadData()
+                        }
                     }
-                    
                 }
-            }
+            })
+            alert.addAction(no)
+            alert.addAction(yes)
+            present(alert, animated: true, completion: nil)
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

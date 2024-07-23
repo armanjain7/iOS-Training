@@ -26,6 +26,7 @@ class NewTaskViewController: UIViewController {
     var cameFromShow: Int?
     var docId: String?
     var taskPriority = 0
+    var isDone: Bool?
     @IBAction func save(_ sender: Any) {
         if let id = docId {
             updateData(id)
@@ -53,7 +54,7 @@ class NewTaskViewController: UIViewController {
             {
                 let msgDate = Date().timeIntervalSince1970
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                dateFormatter.dateFormat = "dd-MMMM-yy HH:mm"
                 let dateString = dateFormatter.string(from: date)
                 let priority = taskPriority
                 let newDoc = db.collection("data").document()
@@ -77,6 +78,7 @@ class NewTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backButtonTapped))
+        backButton.tintColor = UIColor.black
         self.navigationItem.leftBarButtonItem = backButton
         if let descriptionText  {
             details.text = descriptionText
@@ -86,10 +88,10 @@ class NewTaskViewController: UIViewController {
         }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        dateFormatter.dateFormat = "dd-MMMM-yy HH:mm "
         
         if let deadlineText, let dateInDate = dateFormatter.date(from: deadlineText) {
-            date.date = dateInDate
+            date.setDate(dateInDate,animated: true)
         }
         if let priorityText {
             switch priorityText {
@@ -146,19 +148,21 @@ class NewTaskViewController: UIViewController {
             self.present(alert, animated: true)
             return
         }
-        let documentRef = db.collection("data").document(id)
+        let msgDate = Date().timeIntervalSince(self.date.date)
         let date = date.date
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "dd-MMMM-yy HH:mm a"
         let dateString = dateFormatter.string(from: date)
+        print(dateString)
+        let documentRef = db.collection("data").document(id)
         documentRef.updateData(["id": id,
-                                "decription": self.details.text!,
+                                "details": self.details.text!,
                                 "heading": self.heading.text!,
-                                "deadline": dateString,
+                                "date": dateString,
                                 "priority": self.taskPriority,
                                 "email": Auth.auth().currentUser?.email ?? "",
-                                "isDone": false,
-                                "time": Date().timeIntervalSince1970]) { error in
+                                "isDone": isDone ?? false,
+                                "time": msgDate]) { error in
             if let error = error {
                 let alert = UIAlertController(title: "Data not saved", message: "\(error.localizedDescription)", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
